@@ -1,0 +1,36 @@
+.btn-outline-primary{
+    border: none;
+    color: rgb(21, 69, 241);
+}
+.btn-outline-light{
+    border: none;
+}
+.btn-outline-light:hover{
+    background-color: rgb(255, 255, 255) ;
+    color:rgb(21, 69, 241) ;
+    border: none;
+}
+h1{
+    font-size: 1.5rem;
+}
+.header .h5{
+    display: inline;
+}
+.small-heading {
+    font-size: 1rem;
+}
+.text-muted{
+    font-size: 0.5rem;
+}
+
+p{
+    font-size: 0.5rem;
+}
+.text-secondary{
+    font-size: 0.4rem;
+    font-weight: bold;
+}
+.btn{
+    font-size: 0.5rem;
+    border-radius: .2rem;
+}

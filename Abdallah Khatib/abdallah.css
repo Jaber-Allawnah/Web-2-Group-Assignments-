@@ -1,0 +1,32 @@
+body {
+    background-color: #222;
+    color: white;
+}
+
+.news-section .card {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.news-section .card:hover {
+    transform: translateY(-5px);
+}
+
+.news-section .card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-section a {
+    color: white;
+    text-decoration: none; /* إزالة الخط */
+    font-weight: bold;
+}
+
+.news-section a:hover {
+    color: #007bff; /* لون أزرق عند التمرير */
+}

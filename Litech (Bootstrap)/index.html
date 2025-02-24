@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Assignment</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      /*This css section is done by Manar Khader */
+            .header {
+            background-color: #232f3e;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Styled button link */
+        .header-link {
+            color: #0d6efd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        
+        .header-link:hover {
+            color: white;
+        }
+        
+        .header-link i {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        /* Buttons hover effect */
+        .btn-hover:hover {
+            background-color: #0d6efd !important;
+            color: white !important;
+        }
+        
+        .btn-space {
+            margin-left: 10px;
+        }
+        
+        /* Hide header when arrow is clicked */
+        #toggleCheckbox {
+            display: none;
+        }
+        
+        /* Hide navbar except the arrow icon (**need to edit**) */
+        #toggleCheckbox:checked ~ .header {
+            transform: translateY(-100%);
+        }
+        
+        #toggleCheckbox:checked ~ .header > * {
+            display: none;
+        }
+        
+        #toggleCheckbox:checked ~ .header .toggle-label {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        /* Rotate the toggle button when clicked */
+        #toggleCheckbox:checked ~ .header .toggle-label i {
+            transform: rotate(180deg);
+        }
+        
+        .toggle-label {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .toggle-label:hover {
+            color: white;
+        }
+        
+        /* Align buttons closer to arrow icon */
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero {
+            background-color: #eef2ff;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #5f9cff;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2A50C1 !important;
+        }
+        .features {
+            padding: 50px 0;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 50px 0;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #b0b3b8;
+        }
+        .footer a:hover {
+            color: #5f9cff;
+        }
+        .footer h5 {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .footer .social-icons a {
+            font-size: 20px;
+            margin-right: 10px;
+            color: white;
+        }
+        .footer .social-icons a:hover {
+            color: #5f9cff;
+        }
+        .logos {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .mid-section {
+            padding: 100px 0;
+            background-color: #eef2ff;
+            text-align: center;
+        }
+        .feature-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .nav-link.active, .nav-link:hover {
+             color: blue !important;
+        }
+        .dropdown-item:hover { 
+            color: blue !important; 
+            background-color: transparent !important; 
+        }
+        .contact-text:hover { 
+            color: blue !important; 
+        }
+        .contact-icon { 
+            color: blue !important; 
+            fill: blue !important; 
+        }
+        .btn-primary:hover { 
+            background-color: black !important; 
+            color: white !important; 
+        }
+        .dropdown:hover .dropdown-menu { 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+      <!-- Header Section Done by Mannar Khader -->
+      <input type="checkbox" id="toggleCheckbox">
+      <div class="header">
+          <a href="https://www.templatemonster.com/wordpress-themes/53144.html" target="_blank" class="header-link">
+              <i class="bi bi-caret-left-fill"></i> Litech - Bootstrap Corporate WordPress Theme
+          </a>
+          <div class="button-container">
+              <button class="btn btn-success"> <i class="bi bi-cart"></i> Add to Cart</button>
+              <button class="btn btn-light btn-hover btn-space">Get Unlimited Downloads</button>
+              <label for="toggleCheckbox" class="toggle-label"><i class="bi bi-chevron-up"></i></label>
+          </div>
+      </div>
+      <!-- Navbar done by Manar Khader-->
+      <nav class="navbar navbar-expand-lg bg-white shadow-sm p-3">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./assests/logo.jpg" alt="Litech Logo" class="img-fluid" style="width: 40px; height: 40px;">
+                <span class="ms-2 fw-bold">Litech</span>
+            </a>
+            
+            <!-- Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Great Experiences</a></li>
+                            <li><a class="dropdown-item" href="#">Audit And Assurance</a></li>
+                            <li><a class="dropdown-item" href="#">Trades And Stock Market</a></li>
+                            <li><a class="dropdown-item" href="#">Strategy And Planning</a></li>
+                            <li><a class="dropdown-item" href="#">Software And Research</a></li>
+                            <li><a class="dropdown-item" href="#">Support And Maintenance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="teamDropdown" role="button">Team</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mark Lowrens</a></li>
+                            <li><a class="dropdown-item" href="#">Samuel Elliott</a></li>
+                            <li><a class="dropdown-item" href="#">Tom Crasers</a></li>
+                            <li><a class="dropdown-item" href="#">Derek Noisy</a></li>
+                            <li><a class="dropdown-item" href="#">John Rennol</a></li>
+                            <li><a class="dropdown-item" href="#">Jack Bold</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Contact Info -->
+                <div class="d-flex align-items-center ms-3">
+                    <i class="bi bi-telephone-fill contact-icon me-2"></i>
+                    <span class="fw-bold contact-text">+1(505) 555-0125</span>
+                </div>
+                
+                <!-- Button -->
+                <a href="#" class="btn btn-primary ms-3">Get in touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--This section (Services We are Oferring) is Done By Jaber Allawnah 12112071-->
+    <div class="text-center py-5 bg-light-subtle"><!--Big container for the Section changed bg and padding-->
+        <p class="text-body-tertiary fw-normal">WELCOME TO ACCTUAL</p><!--modified weight and color-->
+        <h2 class="fw-semibold text-center">Services We are <span class="text-primary text-center">Offering</span></h2><!--modified weight and color added span to put the word Oferring in seperate color-->
+        <p class="text-center">
+            Your business and your commercial goals are above all else. Whatever the scale<br> 
+            and nature of your projects, our specialists have the skills and experience<br> 
+            necessary to successfully solve your problems.
+        </p>
+        <div class="container text-center"><!--Grid right from Bootstrap-->
+            <div class="row g-4 p-5 d-flex justify-content-center"><!--Made sure that the cards are centered using flexbox -->
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex"><!--Every card will be structured exactly like, larger screens take 3/12 medium take 4/12 and smaller take 6/12-->
+                    <div class="rounded-2 bg-white shadow p-3 mb-5 rounded h-100 w-100 d-flex flex-column"><!--Added shadows and change bg color using bootstrap css, made padding to make it as close as possible-->
+                        <div class="d-flex justify-content-end"><!--One div for the icons (did not find the exact icons so I chose the closest ones) and put the icons on the end of the flex box-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-award-fill text-primary" viewBox="0 0 16 16">
+                                <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864z"/>
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-grow-1"><!--Will fill any space left in the container-->
+                            <h4 class="text-start my-3">Great<br> Experiences</h4>
+                            <p class="text-start text-muted mt-4"><!--Text-muted to make it thinner and less opicity-->
+                                We develop an individual<br> integrated solution for your<br> business and 
+                                select a unique set<br> of services for it, combining them<br> with a single 
+                                strategy and goal<br>
+                            </p>
+                        </div>
+                        <a href="#" class="text-decoration-none text-start fw-bold text-primary">Read more &rsaquo;</a><!--Removed underline and modified formating-->
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                    <div class="rounded-2 bg-white shadow p-3 mb-5 rounded h-100 w-100 d-flex flex-column">
+                        <div class="d-flex justify-content-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-megaphone-fill text-primary" viewBox="0 0 16 16">
+                                <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048"/>
+                            </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4 class="text-start mt-3">Digital<br> Marketing</h4>
+                            <p class="text-start text-muted mt-4">
+                                The project is managed by a<br> professional who controls the<br> entire 
+                                range of work and<br> coordinates all members of the team.
+                            </p>
+                        </div>
+                        <a href="#" class="text-decoration-none text-start fw-bold text-primary">Read more &rsaquo;</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+                    <div class="rounded-2 bg-white shadow p-3 mb-5 rounded h-100 w-100 d-flex flex-column">
+                        <div class="d-flex justify-content-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-workspace text-primary" viewBox="0 0 16 16">
+                                <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                                <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+                            </svg>
+                        </div>
+                        <div><!--No flex-grow here to make it close to the original website-->
+                            <h4 class="text-start mt-3">Consulting<br>Services</h4>
+                            <p class="text-start text-muted mt-4 ">
+                                You trust your business with<br> one team and in the end get a<br> 
+                                high-quality and fast result.
+                            </p>
+                        </div>
+                        <a href="#" class="text-decoration-none text-start fw-bold text-primary">Read more &rsaquo;</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--This section (FAQ) is Done By Jaber Allawnah 12112071-->
+    <div class="container text-center mt-5 "><!--Grid with 2 cells one for the pitcture and the other is for the FAQ -->
+      <div class="row d-flex flex-column flex-md-row"><!-- will make medium screens and larger have row flex and other screens have columns -->
+        <div class="col d-flex">
+            <figure class="figure d-flex justify-content-md-end justify-content-sm-center"><!--will make the contect end for midium and larger screens and will make it center for smaller screens-->
+                <img src="./assests/FAQ.png" class="figure-img img-fluid rounded col-md-8 col-sm-12" alt="Meeting Photo"><!--modify photo to fill th whole container when small snd for medium it will be 8 columns-->
+              </figure>
+          </div>
+          <div class="col d-flex flex-column">
+            <div  class="d-flex col-12 flex-column align-items-md-start align-items-sm-center"><!--center items for smaller screens and make them on the start border for larger screens-->
+                <h6 class="text-body-tertiary mb-4">Frequently Asked Questions</h6>
+                <h1>Get <span class="text-primary">Every </span>Answer</h1>
+            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample"><!--Code straight from bootstrap not exact match but no other classes were able to modify it to prefectl match the required web-->
+                <div class="accordion-item border-0  col-sm-12 col-md-8">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Which companies do you support?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">We provide services to companies that are already on the market or are just planning to start their activities there.</div>
+                  </div>
+                </div>
+                <div class="accordion-item border-0  col-sm-12 col-md-8"><!--Removed the border from all to make them as close as opossible to the required web and made the same changes to asll other accordion-->
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        What are the benefits of working with you?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">We provide services to companies that are already on the market or are just planning to start their activities there.</div>
+                  </div>
+                </div>
+                <div class="accordion-item border-0  col-sm-12 col-md-8">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        What is the cost of your services?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">We provide services to companies that are already on the market or are just planning to start their activities there.</div>
+                  </div>
+                </div>
+                <div class="accordion-item border-0 col-sm-12 col-md-8">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed fw-semibold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                        What is included in consulting services?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">We provide services to companies that are already on the market or are just planning to start their activities there.</div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0  col-sm-12 col-md-8">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed fw-semibold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
+                        What is your performance based on?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">We provide services to companies that are already on the market or are just planning to start their activities there.</div>
+                    </div>
+                </div>
+                
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--Work By mohammad Ammous-->
+      <!-- Full-width video section -->
+<div class="container-fluid p-0 position-relative bg-light">
+    <div class="ratio ratio-16x9 w-100">
+        <iframe src="https://www.youtube.com/embed/CJO0u_HrWE8?si=js6Mc9e9f5SazOMl" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+    </div>
+    <!-- Overlay text -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1 class="display-4">Get More Best Experience<br>With Our Agency</h1>
+    </div>
+</div>
+
+<!-- Testimonial Heading -->
+ <div class="p-5">
+<h5 class="text-center mt-5 text-secondary ">TESTIMONIAL</h5>
+
+<!-- Centered Client's Say's -->
+<div class="d-flex justify-content-center align-items-center mt-5" >
+    <p class="h1 text-center">
+        What Our <span class="text-primary">Client’s Say’s</span>
+    </p>
+</div>
+ </div>
+ 
+  <div class="container text-center my-5">
+    <div class="row g-4">
+ 
+      <div class="col-md-6">
+        <div class="d-flex align-items-start p-3 border rounded shadow-sm">
+          <img src="./assests/custmoer2.webp" class="rounded-circle me-3" width="60" height="60" alt="Marta Lowrens">
+          <div>
+            <h5 class="mb-1">Marta Lowrens</h5>
+            <p class="text-primary small">Business Consultant</p>
+            <p class="mb-2 text-muted">
+              This is the company with which you need to work and get<br>
+          results. Excellent atmosphere, which is created in the process<br>
+          of work. A huge advantage is a detailed<br>
+          cooperation agreement
+            </p>
+            <div class="text-warning">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="ms-auto text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+              <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="col-md-6">
+        <div class="d-flex align-items-start p-3 border rounded shadow-sm">
+          <img src="./assests/customer1.webp" class="rounded-circle me-3" width="60" height="60" alt="Gregg Bissonete">
+          <div>
+            <h5 class="mb-1">Gregg Bissonete</h5>
+            <p class="text-primary small">Business Consultant</p>
+            <p class="mb-2 text-muted">
+              We have been working together for about 6 months. I am <br>
+              very pleased with the result and recommend to my friends.
+            </p>
+            <div class="text-warning">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="ms-auto text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+              <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- these two sections created by ibrahim bileh-->
+    <div class="container text-center my-5 bg-light "> <!-- Bootstrap container with centered text and light background -->
+      <h6 class="text-muted">BUSINESS PRICING</h6>
+      <h2>Discover Our <span class="text-primary">Best Plans</span></h2> <!-- Main heading with a primary-colored span -->
+      <div class="row mt-4 h-100"> <!-- Bootstrap row to contain pricing columns -->
+          <div class="col-md-4"> <!-- Bootstrap column for the first pricing card -->
+              <div class="card shadow border-0 text-center p-4 d-flex flex-column align-items-center"> <!-- Card with shadow and centered content -->
+                  <h3>Starter</h3> <!-- Plan name -->
+                  <div class="text-primary fw-bold fs-4">FREE</div> <!-- Plan price with bold and primary color -->
+                  <ul class="list-unstyled"> <!-- Unordered list of features -->
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16"> <!-- Bootstrap check icon --> <!-- List item -->
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>  <!-- Checkmark icon path -->
+                        </svg> 3 projects</li> <!-- Plan feature -->
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 30-day version history</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Up to 2 editors</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Unlimited cloud storage</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 2 legal advice</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Financial reports</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Tax planning</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary mb-5 col-5 p-3">Get Started</a> <!-- Button to start the plan -->
+              </div>
+          </div>
+            <!-- the same as the notes up  -->
+          <div class="col-md-4">
+              <div class="card shadow border-0 text-center p-4 bg-primary text-white position-relative d-flex flex-column align-items-center">
+                  <span class="position-absolute top-0 end-0 bg-white text-primary fw-bold px-3 py-1 rounded">NEW</span>
+                  <h3>Starter</h3>
+                  <div class="fw-bold fs-4">$9.99/MO</div>
+                  <ul class="list-unstyled">
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 3 projects</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 30-day version history</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Up to 2 editors</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> <b>Unlimited</b> cloud storage</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 2 legal advice</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Financial reports</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Tax planning</li>
+                  </ul>
+                  <a href="#" class="btn btn-light mb-5 col-5 p-3">Get Started</a>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="card shadow border-0 text-center p-4 d-flex flex-column align-items-center ">
+                  <h3>Business</h3>
+                  <div class="text-primary fw-bold fs-4">$14.99/MO</div>
+                  <ul class="list-unstyled">
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 3 projects</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> 30-day version history</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Up to 2 editors</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Unlimited cloud storage</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> <b>10</b> legal advice</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Financial reports</li>
+                      <li class="my-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg text-primary" viewBox="0 0 16 16">
+                          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                        </svg> Tax planning</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary mb-5 col-5 p-3" >Get Started</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <section class="d-flex align-items-center justify-content-center text-center text-white vh-100 position-relative" style="background: url('./assests/background.webp') center/cover no-repeat;">
+     <!-- Section element with Bootstrap classes are :
+       1 d-flex: Enables flexbox layout
+       2 align-items-center: Centers items vertically
+       3 justify-content-center: Centers items horizontally
+       4 text-center: Aligns text to center
+       5 text-white: Sets text color to white
+       6 vh-100: Makes the section take up 100% of the viewport height
+       7 position-relative: Sets position relative for absolute positioning of child elements
+       8 Inline style applies a background image that covers the entire section -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+      <!-- Creates a semi-transparent dark overlay:
+       1 position-absolute: Positions the div absolutely inside the section
+       2 top-0, start-0: Places the div at the top-left corner
+       3 w-100, h-100: Makes it cover the entire section
+       4 bg-dark: Sets background color to dark
+       5 opacity-50: Makes it 50% transparent -->
+      <div class="position-relative z-1 p-4">
+        <!-- Main content wrapper:
+           1 position-relative: Ensures stacking order works correctly
+           2 z-1: Moves this content above the overlay
+           3 p-4: Adds padding -->
+        
+          <h2>We'll suggest the plan that's right for your business</h2> <!-- Heading for the section -->
+          <p>Ready to start your project? The contact information collected through this form will only be used to send a response to your inquiry.</p> <!-- Paragraph providing additional information -->
+          <form class="d-flex justify-content-center">
+              <input type="email" class="form-control w-50 me-2" placeholder="E-mail">
+              <button class="btn btn-primary">Subscribe</button>
+              
+          </form>
+      </div> <!-- the end of the two sections created by ibrahim bileh-->
+  </section>
+      <!--Added script for accordion -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

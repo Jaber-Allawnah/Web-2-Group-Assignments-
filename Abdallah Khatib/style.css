@@ -1,0 +1,65 @@
+body {
+    background-color: #222; 
+    color: white;
+}
+
+.footer {
+    background-color: #121212; 
+    padding: 40px 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: blue;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: blue;
+    color: white;
+}
+
+.subscribe-input {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+
+}
+
+.subscribe-input::placeholder {
+    color: #bbb;
+}
+
+.subscribe-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+
+}
+
+.subscribe-btn:hover {
+    background-color: #0056b3;
+}
